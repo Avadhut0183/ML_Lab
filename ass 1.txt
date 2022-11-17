@@ -1,0 +1,53 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+df = pd.read_csv('../datasets/Heart.csv')
+
+df.shape
+
+# find missing value
+df.isnull()
+
+# name of columns
+df.head()
+
+# name of columns
+df.columns
+
+# gives datatype
+df.dtypes
+
+# gives sum of null values
+df.isnull().sum()
+
+df.isnull().sum
+
+# gives mean of age column
+df['Age'].mean()
+
+from sklearn.model_selection import train_test_split
+
+df1 = [['Age','Sex','ChestPain','RestBP','Chol','Fbs','RestECG']]
+
+X = df.drop('Age',axis=1)
+
+Y = df['Age']
+
+print(X)
+
+print(Y)
+
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size = 0.25)
+
+X_train.shape
+
+Y_train.shape
+
+X_test.shape
+
+Y_test.shape
+
+
